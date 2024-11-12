@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RHP8NQ10X2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RHP8NQ10X2');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yusuke-Kim portfolio</title>
+    <meta name="description" content="高専生 yusuke-kimのポートフォリオです">
+    <meta name="keywords" content="ポートフォリオ, デザイン, デザイナー">
+    <meta name="author" content="yusuke-kim">
+
+    <meta property="og:title" content="yusuke-kim portfolio">
+    <meta property="og:description" content="高専生 yusuke-kimのポートフォリオです">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yusuke-kim.com">
+    <meta property="og:image" content="005_image/furafu.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="yusuke-kim portfolio">
+    <meta name="twitter:description" content="高専生 yusuke-kimのポートフォリオです">
+    <meta name="twitter:image" content="image/furafu.jpg">
+    <link rel="icon" href="004_image/icon.ico" sizes="192x192">
+
+    <!-- React and ReactDOM from CDN -->
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX and TypeScript transpiling -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- TypeScript from CDN -->
+    <script src="https://unpkg.com/typescript/lib/typescript.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+JP:wght@100..900&family=Shippori+Mincho+B1:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        (function (d) {
+            var config = {
+                kitId: 'nhz3edk',
+                scriptTimeout: 3000,
+                async: true
+            },
+                h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
+        })(document);
+    </script>
+
+
+    <style type="text/css" media="screen">
+        /*define colors*/
+        :root {
+            --main-color: #130a8f;
+            --base-color: #F1F1F1;
+            --accent-color: #f5e72b;
+            --plus-color: #141414;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            /*margin: 0;*/
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--base-color);
+        }
+
+        header {
+            background-color: var(--main-color);
+            color: var(--base-color);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .menu {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: auto;
+            padding: 20px;
+            background-color: var(--plus-color);
+            border-radius: 20px;
+            z-index: 1000;
+            color: var(--base-color);
+        }
+
+        .menu-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .content-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 32px;
+        }
+
+        .content-head-jp {
+            font-family: "Shippori Mincho B1";
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .content-head-en {
+            font-family: "Kanit", sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            color: var(--main-color);
+            text-shadow:
+                -0.02em -0.02em 0 var(--base-color),
+                0.02em -0.02em 0 var(--base-color),
+                -0.02em 0.02em 0 var(--base-color),
+                0.02em 0.02em 0 var(--base-color);
+        }
+
+        .content-sentence {
+            font-family: "Noto Sans JP", sans-serif;
+            margin-top: 20px;
+            margin-bottom: 50px;
+        }
+
+        .header-content {
+            padding: 0px;
+        }
+
+        .about-content {
+            padding: 50px;
+            padding-left: 15vw;
+            padding-right: 15vw;
+            background-color: var(--main-color);
+            color: var(--base-color);
+        }
+
+        .welcome-content {
+            padding: 50px;
+            padding-left: 15vw;
+            padding-right: 15vw;
+            background-color: var(--base-color);
+            color: var(--main-color);
+        }
+
+        .skill-content {
+            padding: 50px;
+            padding-left: 15vw;
+            padding-right: 15vw;
+            background-color: var(--base-color);
+            color: var(--main-color);
+        }
+
+        .table-overflow {
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .slill-table {
+            justify-content: space-between;
+            align-items: center;
+            font-size: 26px;
+        }
+
+        .skill-table-head {
+            font-family: "Shippori Mincho B1";
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .skill-table-sentence {
+            font-family: "Noto Sans JP", sans-serif;
+            font-size: 20px;
+            margin-top: 10px;
+            margin-bottom: 50px;
+        }
+
+        .portfolio-content {
+            padding: 50px;
+            padding-left: 15vw;
+            padding-right: 15vw;
+            background-color: var(--main-color);
+            color: var(--base-color);
+        }
+
+
+        .portfolio-sentence {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            /*justify-content: flex-start;*/
+            justify-content: center;
+        }
+
+        .portfolio-panel {
+            height: auto;
+            width: 340px;
+            padding: 0.5em 1em;
+            margin: 1em 0;
+            color: var(--base-color);
+            background: var(--main-color);
+            border: solid 3px var(--base-color);
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .portfolio-content img {
+            object-position: top;
+            margin-top: 8px;
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .portfolio-content p {
+            font-family: "Noto Sans JP", sans-serif;
+            margin: 8px;
+            white-space: nowrap;
+        }
+
+        .portfolio-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: auto;
+            padding: 20px;
+            background-color: var(--plus-color);
+            border-radius: 20px;
+            z-index: 1000;
+            color: var(--base-color);
+        }
+
+        .popup-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-popup {
+                width: 80%;
+            }
+
+        }
+
+        .popup-media {
+            object-position: top;
+            margin-top: 8px;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .experience-content {
+            padding: 50px;
+            padding-left: 15vw;
+            padding-right: 15vw;
+            background-color: var(--base-color);
+            color: var(--main-color);
+        }
+
+        .contact-content {
+            padding: 50px;
+            padding-left: 15vw;
+            padding-right: 15vw;
+            background-color: var(--main-color);
+            color: var(--base-color);
+        }
+
+        .container {
+            opacity: 0;
+            transform: translateY(50px);
+
+            transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .line {
+            color: transparent;
+            display: inline-block;
+            font-size: 36px;
+            font-weight: bold;
+            overflow: hidden;
+            position: relative;
+            transition: color 0ms 450ms;
+        }
+
+        .line-end {
+            background: linear-gradient(to right, #362ae0 0%, #3b79cc 50%, #42d3ed 100%);
+            bottom: 0;
+            content: '';
+            display: block;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(0, 100%);
+        }
+
+        /* メインコンテンツ */
+        main {
+            padding: 2rem;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .box {
+            flex: 1 1 calc(33.333% - 2rem);
+            background-color: var(--base-color);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--main-color);
+            color: var(--base-color);
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+
+        @media (max-width: 550px) {
+            .portfolio-content {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+
+            .about-content {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+
+            .welcome-content {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+
+            .skill-content {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+
+            .experience-content {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+
+            .contact-content {
+                padding-left: 10vw;
+                padding-right: 10vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <noscript>
+        <p>このサイトはJavaScriptが必要です。ブラウザでJavaScriptを有効にしてください。</p>
+    </noscript>
+    <header id="headerbar">
+        <div class="header-content" id="root">
+        </div>
+
+    </header>
+    <div class="menu-background" id="menu-bg" style="display:none;"></div>
+    <div class="menu" id="menu" style="display:none;">
+        <div style="margin:20px">
+            <h1>MENU</h1>
+            <div style="padding-top:1em;padding-bottom:4em">
+                <select id="colorPicker">
+                    <option value=0>藍/白</option>
+                    <option value=1>青/白</option>
+                    <option value=2>黒/白</option>
+                    <option value=3>赤/白</option>
+                    <option value=4>黒/赤</option>
+                    <option value=5>黒/緑</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+    <div class="welcome-content">
+        <marquee class="container">
+            <p style="font-size:xx-large;">ようこそ</p>
+        </marquee>
+    </div>
+    <div class="about-content">
+        <div class="content-head" style="overflow: hidden;">
+            <div class="content-head-jp container">自己紹介</div>
+            <div class="content-head-en container">About</div>
+        </div>
+        <div style="overflow: hidden;">
+            <div class="content-sentence container">
+                yusuke-kim<br>
+                平成19年10月生 現役高専生 (2024年10月現在)<br>
+                グラフィックデザイン,映像制作,個人開発など幅広く活動しています<br>
+                やる気になれば何でも出来るのが強みです
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="skill-content">
+        <div class="content-head" style="overflow: hidden;">
+            <div class="content-head-jp container">スキル</div>
+            <div class="content-head-en container">Skill</div>
+        </div>
+        <div class="content-sentence">
+            <div class="table-overflow">
+                <div class="slill-table">
+                    <div class="skill-table-head container">デザイン</div>
+                    <div class="skill-table-sentence container">Photoshop,Illustrator,adobeXD,Figma</div>
+                </div>
+                <div class="slill-table">
+                    <div class="skill-table-head container">プログラミング</div>
+                    <div class="skill-table-sentence container">C,C#,html,JavaScript,css,python</div>
+                </div>
+                <div class="slill-table">
+                    <div class="skill-table-head container">動画</div>
+                    <div class="skill-table-sentence container">AfterEffects,Aviutl</div>
+                </div>
+                <div class="slill-table">
+                    <div class="skill-table-head container">その他</div>
+                    <div class="skill-table-sentence container">Unity,Cubase,Blender</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup-background" id="popup-bg" style="display:none;"></div>
+    <div class="portfolio-popup" id="popup" style="display:none;">
+        <div style="margin:20px;overflow: hidden;">
+            <div class="popup-media" id="popup-media">
+            </div>
+            <h2 id="popup-title" style="margin-top:20px; margin-bottom:0px;"></h2>
+            <hr style="margin:0px;">
+            <p><a id="popup-link"></a></p>
+            <p id="description" style="margin-top:10px; margin-bottom:30px;"></p>
+
+        </div>
+    </div>
+
+    <div class="portfolio-content">
+        <div class="content-head" style="overflow: hidden;">
+            <div class="content-head-jp container" style="letter-spacing: -0.15em">プロジェクト</div>
+            <div class="content-head-en container">Portfolio</div>
+        </div>
+        <div class="content-sentence">
+            <p class="container">
+                試験運用Webサイトは
+                <a href="001_html/001_view.html" style="color:var(--base-color);margin: top 0;">こちら</a>
+            </p>
+            <p class="container" style="font-size:x-small">
+                ↑こっちのデザインは"ガチ"です
+            </p>
+            <div class="portfolio-sentence" id="portfolio-sentence">
+            </div>
+            <p class="container" style="font-size:x-small;white-space: wrap;">
+                ※当サイトに掲載されている二次創作作品（動画・画像・音声等）は、個人的なファン活動の一環として制作されたものであり、著作権侵害を意図するものではありません。掲載されている一部の素材（音楽、映像、画像等）は、その権利を所有する第三者に帰属します。
+                <br><br>
+                ※万が一、当サイト上のコンテンツに関して著作権に関する問題がございましたら、権利者ご本人または代理の方からご連絡をいただければ、速やかに該当のコンテンツを削除・修正させていただきます。
+            </p>
+        </div>
+    </div>
+    <div class="experience-content">
+        <div class="content-head" style="overflow:hidden;">
+            <div class="content-head-jp container">経歴</div>
+            <div class="content-head-en container">Experience</div>
+        </div>
+        <div class="content-sentence container">
+            学歴<br>
+            2023/3 公立中学を卒業<br>
+            2023/4 高専に入学<br>
+            ~2024 現在在学中<br>
+            <br>
+            受賞歴<br>
+            市区学校美術展覧会 受賞多数<br>
+            U-16プログラミングコンテスト山口大会2022 アイデア賞<br>
+            U-16プログラミングコンテスト山口大会2023 技術賞 プライムゲート賞<br>
+            中国地区高専コンピュータフェスティバル2024 ゲーム部門 1位
+        </div>
+    </div>
+
+    <div class="contact-content">
+        <div class="content-head" style="overflow:hidden;">
+            <div class="content-head-jp container">連絡先</div>
+            <div class="content-head-en container">Contact</div>
+        </div>
+        <div class="content-sentence">
+            <p class="container">
+                rebuild.up.up※gmail.com<br>
+                ※を@に置き換えてください
+                <br>
+                <br>
+                お問い合わせ・制作依頼(映像制作/デザイン等)・削除依頼は<a href="https://forms.gle/fT2UrfMFG3uwGKNUA"
+                    style="color:var(--base-color)">こちら</a>からお願いします
+            </p>
+
+            <br>
+            <iframe class="container"
+                src="https://docs.google.com/forms/d/e/1FAIpQLScv8hQiCCmJdeqz1pSVD91MjuQc8ycIri3WEjj6E42biRyMBw/viewform?embedded=true"
+                style="width:100%;height:500px">読み込んでいます…</iframe>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 全ての権利を保有</p>
+    </footer>
+
+    <script type="text/babel" data-type="module" data-presets="react">
+        const { useState, useEffect } = React;
+
+        const TextAnimation = ({ text, speed }) => {
+            const [displayedText, setDisplayedText] = useState('');
+
+            useEffect(() => {
+                let index = 0;
+                const interval = setInterval(() => {
+                    if (index + 1 < text.length) {
+                        setDisplayedText((prev) => {
+                            const newText = prev + text[index];
+                            return newText;
+                        });
+                        index++;
+                    } else {
+                        clearInterval(interval);
+                    }
+                }, speed);
+                return () => clearInterval(interval);
+            }, [text, speed]);
+
+            return <h1>{displayedText}</h1>;
+        };
+
+        const App = () => {
+            return <TextAnimation text="Weelcome to my Website!" speed={100} />;
+        };
+
+        const rootElement = document.getElementById('root');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<App />);
+
+        $(document).ready(function () {
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top >= 0 &&
+                    rect.left >= 0 &&
+                    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                );
+            }
+
+            function handleScroll() {
+                $('.container').each(function () {
+                    if (isElementInViewport(this)) {
+                        $(this).addClass('visible');
+                    }
+                });
+                $('.line').each(function () {
+                    if (isElementInViewport(this)) {
+                        $(this).addClass('line-end');
+                    }
+                });
+            }
+
+            $(window).on('scroll resize', handleScroll);
+            handleScroll();
+        });
+
+        window.onload = () => {
+            console.clear();
+            portfolio();
+            document.getElementById("headerbar").addEventListener('click', function () {
+                document.getElementById("menu").style.display = 'block';
+                document.getElementById("menu-bg").style.display = 'block';
+                document.getElementById("menu-bg").addEventListener('click', function () {
+                    document.getElementById("menu").style.display = 'none';
+                    document.getElementById("menu-bg").style.display = 'none';
+                });
+            });
+            //console.log("end");
+        };
+
+        document.getElementById('colorPicker').addEventListener('change', function () {
+            // 選択された値を取得
+            const selectedColor = this.value;
+            const colorval = [
+                {
+                    main: "#130a8f", base: "#F1F1F1"
+                },
+                {
+                    main: "#3020ff", base: "#F1F1F1"
+                },
+                {
+                    main: "#333333", base: "#F1F1F1"
+                },
+                {
+                    main: "#e42222", base: "#F1F1F1"
+                },
+                {
+                    main: "#000000", base: "#e42222"
+                },
+                {
+                    main: "#000000", base: "#0cff0c"
+                }
+            ];
+
+            // CSSのカスタムプロパティ '--main-color' を変更
+            document.documentElement.style.setProperty('--main-color', colorval[selectedColor].main);
+            document.documentElement.style.setProperty('--base-color', colorval[selectedColor].base);
+        });
+
+        const mediaItems = [
+            {
+                title: "【習作】テストお疲れ様でした アニメーション",
+                thumbnail: "otu.png",
+                mediaType: "video",
+                mediaSrc: "otu.mp4",
+                description: "初めてAEで作った動画です",
+                link_with: false,
+                link: "https://www.yusuke-kim.com"
+            },
+            {
+                title: "【ゲーム】FlashBeat",
+                thumbnail: "flash.png",
+                mediaType: "video",
+                mediaSrc: "flashplay.mp4",
+                description: "U-16プログラミングコンテスト山口大会 技術賞 企業賞 受賞\nUnityで作ったゲームです",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=i-DZukWFR64"
+            },
+            {
+                title: "【DTM】FlashBeat テーマ曲(BGM)",
+                thumbnail: "flashbgm.png",
+                mediaType: "video",
+                mediaSrc: "cubase.mp4",
+                description: "自作音ゲーFlashBeatのテーマ曲 作曲しました",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【映像】FlashBeatオープニング",
+                thumbnail: "flashopen.png",
+                mediaType: "video",
+                mediaSrc: "flashopen.mp4",
+                description: "FlashBeatのオープニング\nAeで作りました",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【映像】嘘と未来 文字pv",
+                thumbnail: "usoto.png",
+                mediaType: "video",
+                mediaSrc: "usoto.mp4",
+                description: "ボカロ曲「嘘と未来/うわべ」の文字pvです",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=LNnxiVA9Idw"
+            },
+            {
+                title: "【習作】動いたっ！ イラストアニメーション",
+                thumbnail: "ugoita.png",
+                mediaType: "video",
+                mediaSrc: "anime.mp4",
+                description: "Aeでイラストを動かしてみました",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【習作】大雨警報発令中",
+                thumbnail: "ooame.png",
+                mediaType: "video",
+                mediaSrc: "ooame.mp4",
+                description: "練習です<br>大雨警報が発令中だったので作りました",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【習作】テストお疲れ様でした アニメーション",
+                thumbnail: "otukare.png",
+                mediaType: "video",
+                mediaSrc: "otukare.mp4",
+                description: "テスト終わりに作って部活動のDiscordサーバに投下しました",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【デザイン】コンピュータ部 パンフレット",
+                thumbnail: "konpu.png",
+                mediaType: "image",
+                mediaSrc: "konpu.png",
+                description: "コンピュータ部のパンフレットです<br>練習用に作ったものが採用されました",
+                link_with: true,
+                link: "https://x.com/ube_k_cclub"
+            },
+            {
+                title: "【映像】どうにかなっちゃいそう 文字pv",
+                thumbnail: "dounika.png",
+                mediaType: "video",
+                mediaSrc: "dounika.mp4",
+                description: "「どうにかなっちゃいそう/NOMELON NOLEMON」の文字pvです",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=P7nMc5vHCb0"
+            },
+            {
+                title: "【プログラミング】忙しい人のための作文エディター 試作",
+                thumbnail: "isogatest.png",
+                mediaType: "video",
+                mediaSrc: "isogatest.mp4",
+                description: "U-22プロコンに向けて制作<br>単語にマウスオーバーすると類義語が表示されるようなテキストエディターです<br>全体的なクオリティが低かったのでボツにしました",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【プログラミング】忙しい人のための作文エディター 完成版",
+                thumbnail: "isogasii.png",
+                mediaType: "video",
+                mediaSrc: "isogasii.mp4",
+                description: "U-22プロコンに向けて制作<br>チャットGPTAPIを初めて使いました<br>ページ風のドキュメントを作るのが本当に難しかったです",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【Blender】初めてのBlender",
+                thumbnail: "blen.png",
+                mediaType: "video",
+                mediaSrc: "blen.mp4",
+                description: "Blenderを初めて使った動画<br>普通に難しかったです",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【習作】黒と赤のデザイン",
+                thumbnail: "black.png",
+                mediaType: "image",
+                mediaSrc: "black.png",
+                description: "ウェブデザインの練習<br>黒と赤の配色は高級感が出ていいですよね",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【習作】青と白のデザイン",
+                thumbnail: "blue.png",
+                mediaType: "image",
+                mediaSrc: "blue.png",
+                description: "ウェブデザインの練習<br>僕は青と白の配色が好きです",
+                link_with: false,
+                link: "null"
+            },
+            {
+                title: "【映像】Alice in 冷凍庫 文字pv",
+                thumbnail: "alice.png",
+                mediaType: "video",
+                mediaSrc: "alice.mp4",
+                description: "「Alice in 冷凍庫/Orangester」の文字pvです<br>Aviutlを久しぶりに使いました",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=MDcfP97NVpY"
+            },
+            {
+                title: "【映像】盲目の怪物 文字pv",
+                thumbnail: "moumoku.png",
+                mediaType: "video",
+                mediaSrc: "moumoku.mp4",
+                description: "「盲目の怪物/ひらぎ」の文字pvです<br>赤・黒・白のテキストアニメーション",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=aLBMEIOSxdE"
+            },
+            {
+                title: "【映像】フラフープハレーション 文字pv",
+                thumbnail: "furafu.png",
+                mediaType: "video",
+                mediaSrc: "furafu.mp4",
+                description: "「フラフープハレーション/Twinfield」の文字pvです<br>雲を使ったテキストアニメーション",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=llftGyEqH_4"
+            },
+            {
+                title: "【映像】熱異常 テキストモーション",
+                thumbnail: "netu.png",
+                mediaType: "video",
+                mediaSrc: "netu.mp4",
+                description: "「熱異常/いよわ」のテキストモーションです<br>インパクトのあるテキストモーションの練習です",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=b2NTglk9tvI"
+            },
+            {
+                title: "【映像】シンカンセンスゴイカタイアイス p5js練習",
+                thumbnail: "shinkan.png",
+                mediaType: "video",
+                mediaSrc: "shinkan.mp4",
+                description: "「シンカンセンスゴイカタイアイス/シャノン」の映像です<br>p5.jsを使った映像制作の練習です",
+                link_with: true,
+                link: "https://www.youtube.com/watch?v=O_VRIuKM9gw"
+            },
+            {
+                title: "【映像】高専プロコン 非公式pv",
+                thumbnail: "kousenprocon.png",
+                mediaType: "video",
+                mediaSrc: "kousenprocon.mp4",
+                description: "全国高等専門学校プログラミングコンテスト 第35回 奈良大会の非公式pvです<br>間違いなく現作品の中で最高傑作です",
+                link_with: true,
+                link: "https://x.com/complexivetunes/status/1842760522137297009"
+            },
+            {
+                title: "【映像】冥界 二次創作pv",
+                thumbnail: "20241027_meikai.png",
+                mediaType: "video",
+                mediaSrc: "20241027_meikai.mp4",
+                description: "「冥界/kabangu」の二次創作文字pvです。<br>イラレで素材を作る練習です。",
+                link_with: true,
+                link: "https://youtu.be/6vkz64v4IRc?si=xe-e1ajaHeYMn35l"
+            }
+        ];
+        let Scrollable = true;
+        let startY = 0;
+        let currentY = 0;
+        let popup = document.querySelector('.portfolio-popup');
+        window.addEventListener('wheel', (event) => {
+            if (!Scrollable) {
+                event.preventDefault();
+                let moveY = -event.deltaY / 2;
+                currentY += moveY;
+                popup.style.transform = `translate(-50%, calc(-50% + ${currentY}px))`;
+            }
+        }, { passive: false });
+        let isDragging = false;
+
+        // タッチ操作の開始
+        window.addEventListener('touchstart', (event) => {
+            if (!Scrollable) {
+                isDragging = true;
+                startY = event.touches[0].clientY; // タッチの開始位置を保存
+            }
+        });
+
+        // タッチ操作の移動
+        window.addEventListener('touchmove', (event) => {
+            if (!Scrollable) {
+                if (!isDragging) return;
+
+                let moveY = event.touches[0].clientY - startY; // 移動量を計算
+                currentY += moveY;
+                popup.style.transform = `translate(-50%, calc(-50% + ${currentY}px))`; // Y軸の位置を変更
+                startY = event.touches[0].clientY; // 現在のタッチ位置を次の基準に
+            }
+        });
+
+        // タッチ操作の終了
+        window.addEventListener('touchend', () => {
+            if (!Scrollable) {
+                isDragging = false;
+            }
+        });
+
+
+        function portfolio() {
+            for (let i = 0; i < mediaItems.length; i++) {
+                let j = (mediaItems.length - i - 1);
+                let portfolio = document.createElement('div');
+                portfolio.id = ("panel-" + j);
+                portfolio.className = 'portfolio-panel container';
+                let thum = document.createElement('img');
+                thum.src = ("004_image/" + mediaItems[j].thumbnail);
+                thum.loading = "lazy"
+                portfolio.appendChild(thum);
+                let porttitle = document.createElement('p');
+                porttitle.textContent = mediaItems[j].title;
+                portfolio.appendChild(porttitle);
+                document.getElementById("portfolio-sentence").appendChild(portfolio);
+                portfolio.addEventListener("click", function () {
+                    popup_display(j);
+                });
+            }
+        }
+        function popup_display(panelnum) {
+            const popup = document.getElementById("popup");
+            document.getElementById("popup-media").innerHTML = '';
+            if (mediaItems[panelnum].mediaType == "video") {
+                let popup_video = document.createElement('video');
+                popup_video.style.width = '100%';
+                popup_video.style.height = 'auto';
+                popup_video.style.borderRadius = '20px'
+                popup_video.controls = true;
+                let sourceMp4 = document.createElement('source');
+                sourceMp4.src = ("005_video/" + mediaItems[panelnum].mediaSrc);
+                sourceMp4.type = 'video/mp4';
+                popup_video.appendChild(sourceMp4);
+                popup_video.appendChild(document.createTextNode('このブラウザでは動画を再生できません。'));
+                document.getElementById("popup-media").appendChild(popup_video);
+            } else if (mediaItems[panelnum].mediaType == "image") {
+                let popup_image = document.createElement('img');
+                popup_image.style.width = '100%';
+                popup_image.style.height = 'auto';
+                popup_image.style.borderRadius = '20px'
+                popup_image.src = ("004_image/" + mediaItems[panelnum].mediaSrc);
+                document.getElementById("popup-media").appendChild(popup_image);
+            } else {
+                console.log("何が起こった...!?");
+            }
+            document.getElementById("popup-title").innerHTML = mediaItems[panelnum].title;
+            document.getElementById("description").innerHTML = mediaItems[panelnum].description;
+            if (mediaItems[panelnum].link_with == true) {
+                document.getElementById("popup-link").href = mediaItems[panelnum].link;
+                document.getElementById("popup-link").innerHTML = mediaItems[panelnum].link;
+            } else {
+                document.getElementById("popup-link").innerHTML = '';
+            }
+            Scrollable = false;
+            document.getElementById("popup").style.display = "block";
+            const popup_bg = document.getElementById("popup-bg");
+            popup_bg.style.display = "block";
+            popup_bg.addEventListener("click", function () {
+                popup_close();
+            });
+        }
+        function popup_close() {
+            document.getElementById("popup-media").innerHTML = '';
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("popup-bg").style.display = "none";
+            startY = 0;
+            currentY = 0;
+            popup.style.transform = `translate(-50%, calc(-50% + ${currentY}px))`;
+            Scrollable = true;
+        }
+
+    </script>
+</body>
+
+</html>
